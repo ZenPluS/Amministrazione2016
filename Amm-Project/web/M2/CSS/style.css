@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28-mar-2016, 13.03.00
+    Author     : zenpl
+*/
+
+/* Sfondo, fonts e colori */
+body {
+    background-color: #222222;
+    font-family: "Open Sans", Arial, sans-serif;
+    color: #eeeeee;
+    font-size: 14px;    /* aggiungo la dimensione perchè secondo me si vede troppo grande */
+ }
+
+ /* Headers */
+ h1, h2, h3{
+     text-align: left;
+     text-indent: 20px;
+ }
+ 
+ /* Paragrafi */
+ p{
+     text-align: justify;
+ }
+ 
+ /* Link */
+ a.linkEsterno:link{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+ }
+ 
+a.linkEsterno:visited{
+    color: green;
+    font-weight:lighter;
+ }
+ 
+ a.linkEsterno:hover{
+    color: blue;
+    font-weight: normal;
+ }
+ 
+  a.linkEsterno:active{
+    color: red; 
+    font-weight: normal;
+ }
