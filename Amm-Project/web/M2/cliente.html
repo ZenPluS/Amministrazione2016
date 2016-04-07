@@ -11,14 +11,34 @@ and open the template in the editor.
         <meta name="author" content="Enrico Meloni">
         <meta charset="UTF-8">
         <meta name="keywords" content="Pagina per il cliente">
-        <link href="CSS/style.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="CSS/style.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
-    <body>
-        <a href='login.html' class="linkEsterno"><h3>Login</h3></a>
-        <a href='descrizione.html' class="linkEsterno"><h3>Descrizione</h3></a>
-        
+       <body>
+        <div id="page">
+            <header>
+                <!--  header -->
+                <div id="header">
+                    <div id="logo">
+                        <!-- aggiunto logo da CSS -->
+                        <h1>All Thing App Market</h1>
+                    </div> <!-- sezione per il cambio di layout -->
+                    <select class="menu">
+                        <option>Login</option>
+                        <option>Venditore</option>
+                        <option>Descrizione</option>
+                    </select>
+                    <div id="menu">
+                        <ul>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="venditore.html">Venditore</a></li>
+                            <li><a href="descrizione.html">Descrizione</a></li>
+                        </ul>
+                    </div> 
+                </div>
+            </header>
+        <div id="content-client">
         <table>
-        
+            <caption>Applicazioni in vendita</caption>
             <tr>
                 <th> Nome </th>
                 <th> Descrizione</th>
@@ -27,81 +47,94 @@ and open the template in the editor.
                 <th> Prezzo </th>
                 <th> Link </th>
             </tr>
-            
-            <tr><!--Stolen by Google Play, sorry Google :D -->
-                <td>ImpulseIconPack</td>
-                <td>
+            <!--Stolen by Google Play, sorry Google :D -->
+            <tr class="uno">
+                <td class="name">ImpulseIconPack</td>
+                <td class="desc">
                     Iconpack per il vostro device che utilizza le basi del 
                     Material Design detate da Google e pochi colori minimali
                 </td>
-                <td><img src="SRC/IMG/ImpulseIconPack.png" 
+                <td class="generale"><img src="SRC/IMG/ImpulseIconPack.png" 
                          title="ImpulseIconPack" alt="ImpulseIconPack" 
                          width="100" height="100"/></td>
-                <td>nessun limite</td>
-                <td>1.77 €</td>
-                <td><a href='cliente.html'><h3>Acquista</h3></a></td>
+                <td class="generale">nessun limite</td>
+                <td class="generale">1.77 €</td>
+                <td><a href='cliente.html'>Acquista</a></td>
             </tr>
             
-            <tr>
-                <td>Google Search Now</td>
-                <td> App Google per mobile: il modo più semplice e veloce per 
+            <tr class="due">
+                <td class="name">Google Search Now</td>
+                <td class="desc"> App Google per mobile: il modo più semplice e veloce per 
                     trovare ciò che ti serve sul Web e sul tuo dispositivo
                 </td>
-                <td><img src="SRC/IMG/GoogleSearchNow.png" 
+                <td class="generale"><img src="SRC/IMG/GoogleSearchNow.png" 
                          title="GoogleSearchNow" alt="GoogleSearchNow" 
                          width="100" height="100"/></td>
-                <td>nessun limite</td>
-                <td>0.00 €</td>
-                <td><a href='cliente.html'><h3>Acquista</h3></a></td>
+                <td class="generale">nessun limite</td>
+                <td class="generale">0.00 €</td>
+                <td><a href='cliente.html'>Acquista</a></td>
             </tr>
             
-            <tr>
-                <td>MultiRomManager</td>
-                <td>App che aggiunge un modulo kernel al vostro dispositivo e 
+            <tr class="uno">
+                <td class="name">MultiRomManager</td>
+                <td class="desc">App che aggiunge un modulo kernel al vostro dispositivo e 
                     e permette l'installazione e l'avvio di più Rom e permette 
                     anche la compilazione e l'avvio di Ubuntu Touch
                 </td>
-                <td><img src="SRC/IMG/MultiRomManager.png" 
+                <td class="generale"><img src="SRC/IMG/MultiRomManager.png" 
                          title="MultiRomManager" alt="MultiRomManager" 
                          width="100" height="100"/></td>
-                <td>nessun limite</td>
-                <td>0.00 €</td>
-                <td><a href='cliente.html'><h3>Acquista</h3></a></td>
+                <td class="generale">nessun limite</td>
+                <td class="generale">0.00 €</td>
+                <td><a href='cliente.html'>Acquista</a></td>
             </tr>
             
-            <tr>
-                <td>Browser Chrome - Google</td>
-                <td>Naviga velocemente sul tuo cellulare o tablet Android con 
+            <tr class="due">
+                <td class="name">Browser Chrome - Google</td>
+                <td class="desc">Naviga velocemente sul tuo cellulare o tablet Android con 
                     il browser Google Chrome che utilizzi abitualmente sul 
                     desktop. Riprendi le tue attività sugli altri dispositivi 
                     grazie alla sincronizzazione delle schede, esegui ricerche 
                     vocali e riduci l'utilizzo dei dati fino al 50% durante 
                     la navigazione
                 </td>
-                <td><img src="SRC/IMG/GoogleChromeBrowser.png" 
+                <td class="generale"><img src="SRC/IMG/GoogleChromeBrowser.png" 
                          title="GoogleChromeBrowser" alt="GoogleChromeBrowser" 
                          width="100" height="100"/></td>
-                <td>nessun limite</td>
-                <td>0.00 €</td>
-                <td><a href='cliente.html'><h3>Acquista</h3></a></td>
+                <td class="generale">nessun limite</td>
+                <td class="generale">0.00 €</td>
+                <td><a href='cliente.html'>Acquista</a></td>
             </tr>
             
-            <tr>
-                <td>Solid Explorer File Manager</td>
-                <td>Siete alla ricerca di un buon file explorer con un look 
+            <tr class="uno">
+                <td class="name">Solid Explorer File Manager</td>
+                <td class="desc">Siete alla ricerca di un buon file explorer con un look 
                     elegante, moderno e con molte funzioni? Siete nel posto 
-                    giusto!Solid Explorer è il miglior file e cloud manager, 
+                    giusto! Solid Explorer è il miglior file & cloud manager, 
                     con due pannelli indipendenti, che porta una nuova 
                     esperienza nella navigazione tra i file
                 </td>
-                <td><img src="SRC/IMG/SolidExplorerFileManager.png" 
+                <td class="generale"><img src="SRC/IMG/SolidExplorerFileManager.png" 
                          title="SolidExplorerFileManager" alt="SolidExplorerFileManager" 
                          width="100" height="100"/></td>
-                <td>nessun limite</td>
-                <td>0.00 €</td>
-                <td><a href='cliente.html' class="linkEsterno"><h3>Acquista</h3></a></td>
-            </tr>
-            
-       </table>
+                <td class="generale">nessun limite</td>
+                <td class="generale">0.00 €</td>
+                <td><a href='cliente.html'>Acquista</a></td>
+            </tr> 
+        </table>
+        </div>
+                <footer>
+                    <div id="footer">
+                       <p>
+                           <!-- Web master, partita IVA, denominazione sociale ecc -->
+                       </p>
+                    </div>
+                </footer>
+            <div class="design">
+                    <p>
+                         <!-- possibile aggiunta di altre info -->   
+                    </p>
+            </div>
+            </div>
     </body>
 </html>
