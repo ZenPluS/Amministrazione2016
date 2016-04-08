@@ -306,8 +306,8 @@ input.seller{
     
     textarea{
        height: 65px;
-       min-width: 95px;
-       max-width: 120px;
+       min-width: 120px;
+       max-width: 300px;
     }
     
     body{
@@ -390,8 +390,8 @@ input.seller{
     }
     
     #content-seller, #content-login{
-    padding: 0px;
-    width: 100px;
+        padding: 0px;
+        width: 100px;
     }
     
 }
@@ -408,7 +408,7 @@ input.seller{
     textarea{
         height: 65px;
         max-width: 120px;
-        min-width: 95px;
+        min-width: 70px;
     }
     
     #header, footer{
