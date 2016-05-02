@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
         HttpSession session = request.getSession(true); 
         
         //Se non sono loggato:
-        if(session==null || session.getAttribute("loggedIn") == null || session.getAttribute("loggedIn").equals(false)){
+        if(session==null || session.getAttribute("LogIn") == null || session.getAttribute("LogIn").equals(false)){
             if(request.getParameter("Submit") != null){
                 
                 String nickname = request.getParameter("Username");
