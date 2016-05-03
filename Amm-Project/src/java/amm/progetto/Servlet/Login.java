@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
         HttpSession session = request.getSession(true); 
         
         //Se non sono loggato:
-        if(session==null || session.getAttribute("LogIn") == null || session.getAttribute("LogIn").equals(false)){
+        if(session==null || session.getAttribute("Login") == null || session.getAttribute("Login").equals(false)){
             if(request.getParameter("Submit") != null){
                 
                 String nickname = request.getParameter("Username");
@@ -51,15 +51,14 @@ public class Login extends HttpServlet {
                 ArrayList<Utente> userList = FactoryUtenti.getInstance().getUserList();
 
                 for(Utente u : userList){
-                    if(u.getNickname().equals(nickname) && u.getPassword().equals(password )){   
-                        session.setAttribute("loggedAsUtente", true);
+                    if( u.getNickname().equals(nickname) && u.getPassword().equals(password) ){   
+                        session.setAttribute("loggedIn", true);
                         session.setAttribute("id", u.getId());
                         
                         if(u instanceof Venditore){
                             session.setAttribute("Venditore", u);
                             session.setAttribute("loggedAsVenditore", true);
                             request.getRequestDispatcher("venditore.jsp").forward(request, response);
-                            
                         }
                         else if(u instanceof Cliente){
                                 request.setAttribute("objectLighter", FactoryUtenti.getInstance().getOggettiList()); 
@@ -68,10 +67,10 @@ public class Login extends HttpServlet {
                                 request.getRequestDispatcher("cliente.jsp").forward(request, response);  
                             }                    
                     }
-                    if(!u.getNickname().equals(nickname) && !u.getPassword().equals(password)) 
+                    else if(!u.getNickname().equals(nickname) && !u.getPassword().equals(password)){
                         request.setAttribute("ErrMessage", "Credenziali non valide");
-
-                    if("".equals(nickname) && "".equals(password)) 
+                    }
+                    else if("".equals(nickname) && "".equals(password)) 
                         request.setAttribute("ErrMessage", "Campi credenziali non completi");
                 }
             }
