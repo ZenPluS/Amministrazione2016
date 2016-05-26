@@ -68,10 +68,10 @@ public class Login extends HttpServlet {
                             }                    
                     }
                     else if(!u.getNickname().equals(nickname) && !u.getPassword().equals(password)){
-                        request.setAttribute("ErrMessage", "Credenziali non valide");
+                        request.setAttribute("ErrMessage1", "Credenziali non valide");
                     }
-                    else if("".equals(nickname) && "".equals(password)) 
-                        request.setAttribute("ErrMessage", "Campi credenziali non completi");
+                    else if("".equals(nickname) || "".equals(password)) 
+                        request.setAttribute("ErrMessage2", "Campi credenziali non completi");
                 }
             }
         }

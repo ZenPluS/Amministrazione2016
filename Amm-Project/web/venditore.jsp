@@ -14,7 +14,7 @@
         <meta name="author" content="Enrico Meloni">
         <meta charset="UTF-8">
         <meta name="keywords" content="Pagina del venditore">
-        <link href="M3/CSS/style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="CSS/style.css" rel="stylesheet" type="text/css" media="screen" />
         <!-- modifica percorso CSS per matchiare con le cartelle -->
     </head>
        <body>
@@ -34,7 +34,7 @@
             
             <br><label for="Prezzo"> Prezzo </label>
             <!-- 0.00 == gratis --><!-- non ho trovato un type adeguato per le valute -->
-            <br><input type="number" name="Prezzo" min="0,00" max="1000,00" value="0,00" id="Prezzo">
+            <br><input type="number" name="Prezzo" min="0.00" max="1000.00" value="0.00" id="Prezzo">
             
             <br><label for="Quantità"> Quantità </label>
             <br><input type="number" name="Quantità" id="Quantità">

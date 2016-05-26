@@ -23,45 +23,39 @@
                 <jsp:include page="header.jsp" />               <!--header-->
             
         <div id="content-login">
-            <form ation="login.jsp" method="get">
+            <form action="login.jsp" method="get">
             <c:choose>   
                 <c:when test="${LogIn eq true}">
-                    <br><div class="correct">
+                    <br><div>
                     ${messaggioLogin}
                     </div>
-                    <br><div class="button">
-                    <br><input type="submit" name="ErrMessage1" value="Logout" class="button"/>
+                    <br><div>
+                    <br><input type="submit" name="ErrMessage1" value="Logout"/>
                 </div>
                 </c:when>
-                <c:otherwise>
-                    <br><div class="labelUsername">
-                        <br><label for="Username">Username</label>
-                    </div>
-                    <div class="inputUsername">
-                        <br><input type="text" name="Username" id="username"/><br/>
-                    </div>
-                    <div class="clearer"></div>
-                        <div class="labelPassword">
-                        <label for="Password">Password</label>
-                    </div>
-                    <br><div class="inputPassword">
-                        <input type="Password" name="Password" id="password"/><br/>
-                    </div>
-                        <div class="clearer"></div>
-                        <div class="errors errorLogin">
-                            ${messaggio}
+                    <c:otherwise>
+                        <br><div>
+                            <br><label>Username</label>
                         </div>
-                    <p>
-                        <input type="radio" name="tipo" id="Cliente" value="loggedAsCliente">
-                        <label for="Cliente">Cliente</label><br>
-                        <input type="radio" name="tipo" id="donna" value="loggedAsVenditore">
-                        <label for="Venditore">Venditore</label><br>
-                    </p>
-                    <div class="buttonLogin">
-                        <input class="button" name="Login" type="submit" value="Login"/>
-                        <input class="button" name="Reset" type="reset" value="Reset"/></br>
-                    </div>
-                </c:otherwise>
+                        <div>
+                            <br><input type="text" name="Username" id="username"/><br/>
+                        </div>
+                        <div></div>
+                            <div>
+                            <label>Password</label>
+                        </div>
+                        <br><div>
+                            <input type="Password" name="Password" id="password"/><br/>
+                        </div>
+                            <div></div>
+                            <div>
+                                ${messaggio}
+                            </div>
+                        <div>
+                            <br><input class="button" type="submit" value="Login"><br>
+                            <br><input class="button" type="reset" value="Reset"><br>
+                        </div>
+                    </c:otherwise>
             </c:choose>
             </form>
         </div>

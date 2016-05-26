@@ -42,37 +42,34 @@ public class Cliente extends HttpServlet {
    
         HttpSession session = request.getSession(false);
         
-        if( session==null || 
-            session.getAttribute("loggedIn") == null ||
-            session.getAttribute("loggedIn").equals(false) || 
-            session.getAttribute("loggedAsCustomer") == null ||  
-            !session.getAttribute("loggedAsCustomer").equals(true) ){
-            
-                request.setAttribute("ErrMessage", "Login non effettuato");
+        if(session==null || session.getAttribute("loggedIn") == null || session.getAttribute("loggedIn").equals(false) || session.getAttribute("loggedAsCustomer") == null ||  !session.getAttribute("loggedAsCustomer").equals(true) )
+        {
+            request.setAttribute("messaggioValidazione", "Accesso Negato <br/> Effettua il login come cliente");
         }
-        else{
-            request.setAttribute("OggettiList", FactoryOggetti.getOggettiList()); 
+        else
+        {
+            request.setAttribute("theApps", FactoryOggetti.getInstance().getOggettiList()); 
             session.getAttribute("Cliente");
             
             
-            if(request.getParameter("idOggetto")!=null){
-                
-                Integer idOggetto = Integer.valueOf(request.getParameter("idOggetto"));
-                
-                request.setAttribute("id", idOggetto);
-                request.setAttribute("Applicazione", FactoryOggetti.getInstance().getOggettotByID(idOggetto));
+            if(request.getParameter("idAppDalLink")!=null){
+                Integer idApp = Integer.valueOf(request.getParameter("idAppDalLink"));
+                request.setAttribute("idApp", idApp);
+                request.setAttribute("App", FactoryOggetti.getInstance().getOggettotByID(idApp));
             }
-            if(request.getParameter("ConfermaAcuisto") != null){
-                request.setAttribute("ConfermaAcuistoCtrl", true);
-                request.setAttribute("SiAcquisto", "Congratulazioni! Hai completato il tuo acquisto");
-                request.setAttribute("NoAcquisto", "Ci dispiace, ma non hai abbastanza soldi per confermare il tuo acquisto");
+            if(request.getParameter("BuyConferm") != null)
+            {
+                request.setAttribute("BuyConfirmFlag", true);
+                request.setAttribute("BuyConfermSuccess", "Congratulazioni! Hai completato il tuo acquisto");
+                request.setAttribute("BuyConfermFail", "Ci dispiace, ma non hai abbastanza soldi per confermare il tuo acquisto");
             }
             else{
-                request.setAttribute("ConfermaAcuistoCtrl", false);
-                request.getAttribute("Applicazione");
+                request.setAttribute("BuyConfirmFlag", false);
+                request.getAttribute("Goods");
             }
-            request.getRequestDispatcher("cliente.jsp").forward(request, response);
-            }
+        }
+      
+      request.getRequestDispatcher("cliente.jsp").forward(request, response);
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -46,7 +46,7 @@
                     </td>
                     <td class="generale">nessun limite</td>
                     <td class="generale">${Oggetto.prezzo}</td>
-                     <td><a href="cliente.html?idOggetto=${Oggetto.id}">Acquista</a></td>
+                    <td><a href="cliente.jsp?idOggetto=${Oggetto.id}">Acquista</a></td>
                 </tr>
             </c:forEach>
         </table>
